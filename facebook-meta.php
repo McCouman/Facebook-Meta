@@ -24,8 +24,11 @@ function insert_fb_in_head() {
 		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
 		echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
 	}
-	echo "
-";
+	
+	//audio or video tag as idea and testing
+	#echo '<meta property="og:audio" content="http..." />'; //your Audio or Video data (http)
+	echo '<meta property="og:audio" content="' . do_shortcode('[your shortcode to mp3]') . '" />'; //Shortcode (Podlove or others) 
+	
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
 ?>
