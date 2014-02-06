@@ -25,9 +25,19 @@ function insert_fb_in_head() {
 	}
 	
 	//Audio or Video Tags as Idea and Testings
+	//1.)
 	#echo '<meta property="og:audio" content="http..." />'; //your Audio or Video data (http)
+	
+	//2.)
 	echo '<meta property="og:audio" content="' . do_shortcode('[your shortcode to mp3]') . '" />'; //Shortcode (Podlove or others) 
 	
+	//3.)
+	#?&gt;<meta property="og:audio" content="<?php echo $meta_values = get_post_custom($post->ID);
+	#	
+	#if ( isset ( $meta_values['meta_audio_attachment'][0] ) ) {
+	#	echo $meta_values['meta_audio_attachment'][0];
+	#} ?&gt;" /><?php
+
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
 ?>
