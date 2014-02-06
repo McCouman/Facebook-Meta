@@ -6,7 +6,6 @@ function add_opengraph_doctype( $output ) {
 add_filter('language_attributes', 'add_opengraph_doctype');
 
 //Lets add Open Graph Meta Info
-
 function insert_fb_in_head() {
 	global $post;
 	if ( !is_singular()) //if it is not a post or a page
@@ -25,7 +24,7 @@ function insert_fb_in_head() {
 		echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
 	}
 	
-	//audio or video tag as idea and testing
+	//Audio or Video Tags as Idea and Testings
 	#echo '<meta property="og:audio" content="http..." />'; //your Audio or Video data (http)
 	echo '<meta property="og:audio" content="' . do_shortcode('[your shortcode to mp3]') . '" />'; //Shortcode (Podlove or others) 
 	
