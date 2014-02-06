@@ -37,6 +37,8 @@ function insert_fb_in_head() {
 	#if ( isset ( $meta_values['meta_audio_attachment'][0] ) ) {
 	#	echo $meta_values['meta_audio_attachment'][0];
 	#} ?&gt;" /><?php
+	
+	echo '<meta property="og:audio:type" content="audio/mpeg" />'; //Audio Type
 
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
